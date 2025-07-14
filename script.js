@@ -1,22 +1,40 @@
-const cats = [
+let images = [];
+
+if (document.title === "Cats") {
+  images = [
     "./src/cats/1cat.jpeg",
     "./src/cats/2cat.jpg",
-    "./src/cats/3cat.jpeg",
-];
-
-let currentIndex = 0;
-
-function showImage(index) {
-    const cat = document.getElementById("slider-image");
-    cat.src = cats[index]
+    "./src/cats/3cat.jpeg"
+  ];
 }
- 
+
+if (document.title === "Dogs") {
+  images = [
+    "./src/dogs/dog1.jpeg",
+    "./src/dogs/dog2.jpeg",
+    "./src/dogs/dog3.jpeg"
+  ];
+}
+
+
+let current = 0;
+
+function updateImage() {
+  const box = document.getElementById("slider-image");
+  if (box && images.length > 0) {
+    box.src = images[current];
+  }
+}
+
 function nextSlide() {
-    currentIndex = (currentIndex + 1) % cats.length;
-    showImage(currentIndex);
+  current = (current + 1) % images.length;
+  updateImage();
 }
+
 
 function prevSlide() {
-    currentIndex = (currentIndex - 1 + cats.length) % cats.length;
-    showImage(currentIndex);
-}
+    current = (current - 1 + images.length) % images.length;
+    updateImage();
+  }
+  
+  window.onload = updateImage;

@@ -14,34 +14,7 @@
     <img id="slider-image" src="" alt="Cat" />
     <button onclick="nextSlide()">➡️</button>
   </div>
-
-  <script>
-    const images = [
-      "./src/cats/1cat.jpeg",
-      "./src/cats/2cat.jpg",
-      "./src/cats/3cat.jpeg"
-    ];
-
-    let current = 0;
-
-    function updateImage() {
-      document.getElementById("slider-image").src = images[current];
-    }
-
-    function nextSlide() {
-      current++;
-      if (current >= images.length) current = 0;
-      updateImage();
-    }
-
-    function prevSlide() {
-      current--;
-      if (current < 0) current = images.length - 1;
-      updateImage();
-    }
-
-    window.onload = updateImage;
-  </script>
+  <script src="script.js"></script>
    <a class="footer" href="index.html">🔙</a>
 </body>
 </html>
