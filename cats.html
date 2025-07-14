@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cats</title>
+  <link rel="stylesheet" href="style.css" /><link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Cats Lover❤️</h1>
+  <div class="slider">
+    <button onclick="prevSlide()">⬅</button>
+    <img id="slider-image" src="" alt="Cat" />
+    <button onclick="nextSlide()">➡️</button>
+  </div>
+
+  <script>
+    const images = [
+      "./src/cats/1cat.jpeg",
+      "./src/cats/2cat.jpg",
+      "./src/cats/3cat.jpeg"
+    ];
+
+    let current = 0;
+
+    function updateImage() {
+      document.getElementById("slider-image").src = images[current];
+    }
+
+    function nextSlide() {
+      current++;
+      if (current >= images.length) current = 0;
+      updateImage();
+    }
+
+    function prevSlide() {
+      current--;
+      if (current < 0) current = images.length - 1;
+      updateImage();
+    }
+
+    window.onload = updateImage;
+  </script>
+   <a class="footer" href="index.html">🔙</a>
+</body>
+</html>

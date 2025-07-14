@@ -1,0 +1,44 @@
+body {
+  text-align: center;
+  font-family: 'Chewy', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.choice {
+  width: 200px;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.choice:hover {
+  transform: scale(1.05);
+}
+
+.slider {
+  margin-top: 50px;
+}
+
+.slider img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin: 0 20px;
+  }
+
+  .footer {
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+  }
